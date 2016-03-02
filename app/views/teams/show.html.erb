@@ -1,0 +1,5 @@
+<%= form_tag import_teams_path, multipart: true do %>
+  <%= hidden_field_tag :team_id, params[:id] %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "インポート" %>
+<% end %>
