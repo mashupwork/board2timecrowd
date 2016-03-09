@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :teams, only: [:show] do
-    collection { post :import }
+    collection { post :import_clients }
+    collection { post :import_projects }
   end
 
   # Example resource route with options:

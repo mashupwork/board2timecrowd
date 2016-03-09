@@ -41,12 +41,17 @@ class Timecrowd
     access_token.get("/api/#{VERSION}/teams?state=#{state}").parsed
   end
 
-  def add team_id, task_title
+  def team_tasks(team_id, state = nil)
+    access_token.get("/api/#{VERSION}/teams/#{team_id}/tasks?state=#{state}").parsed
+  end
+
+  def add team_id, task_title, parent_id=nil
     params = {
       task: {
         title: task_title
       }
     }
+    params[:task][:parent_id] = parent_id if parent_id.present?
     url = "/api/#{VERSION}/teams/#{team_id}/tasks.json"
     #raise params.inspect
     #raise url.inspect
