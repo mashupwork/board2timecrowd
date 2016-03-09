@@ -1,0 +1,14 @@
+<h2>Board顧客をTimeCrowdにアップロード</h2>
+<%= form_tag import_clients_teams_path, multipart: true do %>
+  <%= hidden_field_tag :team_id, params[:id] %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "アップロード" %>
+<% end %>
+
+<h2>Board案件をTimeCrowdにアップロード</h2>
+<%= form_tag import_projects_teams_path, multipart: true do %>
+  <%= hidden_field_tag :team_id, params[:id] %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "アップロード" %>
+<% end %>
+
