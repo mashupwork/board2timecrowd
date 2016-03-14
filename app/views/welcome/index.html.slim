@@ -1,5 +1,5 @@
 - if @timecrowd.nil?
-  = link_to 'TimeCrowdログイン', '/auth/timecrowd', 'data-no-turbolink' => true
+  = link_to 'TimeCrowdログイン', '/auth/timecrowd'
 - else
   - @timecrowd.teams.each do |team|
     div=link_to team['name'], "/teams/#{team['id']}"
